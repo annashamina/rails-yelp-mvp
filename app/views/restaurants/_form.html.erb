@@ -1,0 +1,22 @@
+  <%= simple_form_for(@restaurant) do |f| %>
+    <% if @restaurant.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.label :Name %>
+    <%= f.text_field :name %>
+    <%= f.label :Address %>
+    <%= f.text_field :address %>
+    <%= f.label :Phone_number %>
+    <%= f.text_field :phone_number %>
+    <%= f.label :Category %>
+    <%= f.text_field :category %>
+    <%= f.submit %>
+
+  <% end %>
